@@ -17,7 +17,7 @@ var gulp = require('gulp'),
 gulp.task('scss', function() {
   gulp.src('src/stylesheets/*.scss')
     .pipe(sass({ style: 'expanded' }))
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe(autoprefixer('last 2 version', 'Safari', 'op_mob', 'and_chr', 'ie', 'Chrome', 'Android', 'iOS', 'Firefox ESR', 'and_ff', '> 5%'))
     .pipe(gulp.dest('dist/assets/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
@@ -42,11 +42,11 @@ gulp.task('slim', function () {
   gulp.src('./src/views/*.slim')
   	.pipe(slim({pretty: true, options: "encoding='utf-8'"}))
   	.pipe(gulp.dest('dist/'))
-  	.pipe(notify({ message: '赵云鹏是SB!!Slim task complete' }));
+  	.pipe(notify({ message: 'Slim task complete' }));
 })
 
 gulp.task('clean', function(cb) {
-    del(['dist/assets/css', 'dist/assets/js', 'dist/assets/img'], cb)
+    del(['dist/assets/css', 'dist/assets/js'], cb)
 });
 
 gulp.task('watch', function() {
