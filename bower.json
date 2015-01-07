@@ -1,0 +1,21 @@
+{
+  "name": "DigitalArt",
+  "version": "0.0.1",
+  "authors": [
+    "cassiuschen <chzsh1995@gmail.com>"
+  ],
+  "main": "app.js.coffee",
+  "keywords": [
+    "html5",
+    "digital",
+    "art"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
