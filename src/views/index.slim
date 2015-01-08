@@ -2,8 +2,39 @@ doctype html
 html
   head
     meta charset="utf-8"
-    title DA
+    title DA    
+    link href="./assets/css/swiper.css" type="text/css" rel="stylesheet"
+    link href="./assets/css/main.min.css" type="text/css" rel="stylesheet"
+    link href="./assets/css/typing.css" type="text/css" rel="stylesheet"
+    script src="./assets/js/jquery.min.js"
+    script src="./assets/js/swiper.js"
+    script src="./assets/js/main.min.js"
+    script src="./assets/js/typing.js"
   body
-    h1 Hello, World
-    h2 HaHaHa!
-    h3 zsd
+    .pages
+      .swiper-wrapper
+        .swiper-slide.blue#hero
+          #heroImage
+            /img src="./assets/img/bg01.png"
+          .container
+            h2.header
+              | 中国传媒大学
+            img.title src="./assets/img/title.png"
+            #source style="display:none;"
+              | 一个满足你所有兴趣的专业
+            h3.sub.header
+              span#type
+              span.typing-cursor-white
+                | |
+        .swiper-slide.light.blue
+          .container
+            h2.header.deep.blue
+              | 首先
+              br
+              | 简单介绍一下本专业
+            img src="./assets/img/01.png"
+            h3.header.red
+              | 隶属于中国传媒大学
+              br
+              | 艺术学部 - 动画与数字艺术学院
+            

@@ -1,0 +1,113 @@
+html {
+  font-family: 'Apple LiGothic Medium','SimHei','Roboto' !important;
+  height: 100% !important;
+  width: 100%;
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  position: relative;
+  height: 100% !important;
+}
+
+.pages {
+  width: 100% !important;
+  height: 100% !important;
+  color: #e9f2f9;
+  text-align: center;
+}
+.pages .swiper-slide {
+  width: 100%;
+  height: 100%;
+}
+.pages .swiper-slide.blue {
+  background-color: #1b325f;
+  color: #e9f2f9;
+}
+.pages .swiper-slide.blue .header {
+  color: #f26c4f;
+}
+.pages .swiper-slide.blue .sub.header {
+  color: #9cc4e4;
+}
+.pages .swiper-slide.light.blue {
+  background-color: #e9f2f9;
+  color: #3a89c9;
+}
+
+.header.orange {
+  color: #fd7400;
+}
+.header.red {
+  color: #f26c4f;
+}
+.header.deep.blue {
+  color: #1b325f !important;
+}
+
+h2 {
+  font-size: 45px;
+  margin: 10px 0;
+  line-height: 48px;
+  font-weight: 1000;
+  font-style: bold;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: 800;
+  font-style: bold;
+}
+
+#hero {
+  background-image: url(../img/bg.png);
+  background-size: 85% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#hero #heroImage {
+  width: 100%;
+  position: absolute;
+  top: 20px;
+}
+#hero #heroImage img {
+  width: 100%;
+}
+
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+.container img {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 400px;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 250px;
+  }
+
+  h2 {
+    font-size: 25px;
+    line-height: 28px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

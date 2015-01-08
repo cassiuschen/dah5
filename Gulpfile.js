@@ -14,10 +14,19 @@ var gulp = require('gulp'),
     slim = require('gulp-slim'),
     del = require('del');
 
+gulp.task('default', function() {
+    gulp.run("scss");
+    gulp.run("coffee");
+    gulp.run("slim");
+    gulp.run("watch");
+});
+
 gulp.task('scss', function() {
-  gulp.src('src/stylesheets/*.scss')
-    .pipe(sass({ style: 'expanded' }))
-    .pipe(autoprefixer('last 2 version', 'Safari', 'op_mob', 'and_chr', 'ie', 'Chrome', 'Android', 'iOS', 'Firefox ESR', 'and_ff', '> 5%'))
+  gulp.src('src/stylesheets/main.scss')
+    .pipe(autoprefixer({
+            browsers: ['last 2 version', '> 5%']
+        }))
+    .pipe(sass({ precision: 30, style: 'expanded' }))
     .pipe(gulp.dest('dist/assets/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
@@ -27,7 +36,7 @@ gulp.task('scss', function() {
 
 gulp.task('coffee', function() {
   gulp.src('./src/javascripts/*.coffee')
-    .pipe(coffee({bare: true}).on('error', gutil.log))
+    .pipe(coffee({bare: true}).on('error', console.log))
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(concat('main.js'))

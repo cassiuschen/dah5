@@ -2,17 +2,45 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>DA</title>
+    <title>DA    </title>
+    <link href="./assets/css/swiper.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/css/main.min.css" rel="stylesheet" type="text/css" />
+    <link href="./assets/css/typing.css" rel="stylesheet" type="text/css" />
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/swiper.js"></script>
+    <script src="./assets/js/main.min.js"></script>
+    <script src="./assets/js/typing.js"></script>
   </head>
   <body>
-    <h1>
-      Hello, World
-    </h1>
-    <h2>
-      HaHaHa!
-    </h2>
-    <h3>
-      zsd
-    </h3>
+    <div class="pages">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide blue" id="hero">
+          <div id="heroImage"></div>
+          <div class="container">
+            <h2 class="header">
+              中国传媒大学
+            </h2>
+            <img class="title" src="./assets/img/title.png" />
+            <div id="source" style="display:none;">
+              一个满足你所有兴趣的专业
+            </div>
+            <h3 class="sub header">
+              <span id="type"></span><span class="typing-cursor-white">|</span>
+            </h3>
+          </div>
+        </div>
+        <div class="swiper-slide light blue">
+          <div class="container">
+            <h2 class="header deep blue">
+              首先<br />简单介绍一下本专业
+            </h2>
+            <img src="./assets/img/01.png" />
+            <h3 class="header red">
+              隶属于中国传媒大学<br />艺术学部 - 动画与数字艺术学院
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
