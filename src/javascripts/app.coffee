@@ -25,5 +25,5 @@ window.onresize = ->
 
 document.onreadystatechange = ->
   App.Resize()
-  if document.readyState == "complete"
+  if document.readyState == 'complete'
     App.Init()

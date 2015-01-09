@@ -33,7 +33,7 @@ window.onresize = function() {
 
 document.onreadystatechange = function() {
   App.Resize();
-  if (document.readyState === "complete") {
+  if (document.readyState === 'complete') {
     return App.Init();
   }
 };

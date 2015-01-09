@@ -16,6 +16,8 @@ var gulp = require('gulp'),
 
 gulp.task('default', function() {
     gulp.run("scss");
+    gulp.run("pscss");
+    gulp.run('js');
     gulp.run("coffee");
     gulp.run("slim");
     gulp.run("watch");
@@ -23,6 +25,19 @@ gulp.task('default', function() {
 
 gulp.task('scss', function() {
   gulp.src('src/stylesheets/main.scss')
+    .pipe(autoprefixer({
+            browsers: ['last 2 version', '> 5%']
+        }))
+    .pipe(sass({ precision: 30, style: 'expanded' }))
+    .pipe(gulp.dest('dist/assets/css'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifycss())
+    .pipe(gulp.dest('dist/assets/css'))
+    .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.task('pscss', function() {
+  gulp.src('src/stylesheets/photo.scss')
     .pipe(autoprefixer({
             browsers: ['last 2 version', '> 5%']
         }))
@@ -47,6 +62,15 @@ gulp.task('coffee', function() {
     .pipe(notify({ message: 'Scripts task complete' }));
 });
 
+gulp.task('js', function() {
+  gulp.src('./src/javascripts/*.js')
+    .pipe(gulp.dest('dist/assets/js'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/assets/js'))
+    .pipe(notify({ message: 'Scripts task complete' }));
+});
+
 gulp.task('slim', function () {
   gulp.src('./src/views/*.slim')
   	.pipe(slim({pretty: true, options: "encoding='utf-8'"}))
@@ -64,10 +88,16 @@ gulp.task('watch', function() {
 	gulp.watch(['dist/**']).on('change', livereload.changed);
 
 	// Watch .scss files
-	gulp.watch('src/stylesheets/*.scss', ['scss']);
+	gulp.watch('src/stylesheets/main.scss', ['scss']);
+
+    // Watch .scss files
+    gulp.watch('src/stylesheets/photo.scss', ['pscss']);
 
 	// Watch .coffee files
 	gulp.watch('src/javascripts/*.coffee', ['coffee']);
+
+    // Watch .js files
+    gulp.watch('src/javascripts/*.js', ['js']);
 
 	// Watch .slim files
 	gulp.watch('src/views/*.slim', ['slim']);

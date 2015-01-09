@@ -1,0 +1,97 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    title 食的堂 | 陈紫晟摄影结课作业   
+    link href="./assets/css/swiper.css" type="text/css" rel="stylesheet"
+    link href="./assets/css/photo.min.css" type="text/css" rel="stylesheet"
+    script src="./assets/js/jquery.min.js"
+    script src="./assets/js/swiper.js"
+    /script src="./assets/js/main.min.js"
+    script src="./assets/js/typed.min.js"
+  body
+    .pages
+      .swiper-wrapper
+        .swiper-slide
+          img src="./assets/photo/title.jpg"
+        .swiper-slide
+          img src="./assets/photo/01.jpg"
+        .swiper-slide
+          img src="./assets/photo/05.jpg"
+        .swiper-slide
+          img src="./assets/photo/03.jpg"
+        .swiper-slide
+          img src="./assets/photo/04.jpg"
+        .swiper-slide
+          img src="./assets/photo/06.jpg"
+        .swiper-slide
+          img src="./assets/photo/02.jpg"
+        .swiper-slide
+          img src="./assets/photo/title.jpg"
+    h3.typed
+      span#typedContainer
+      
+    coffee:
+      $ ->
+        $('#typedContainer').typed
+          strings: ['摄影课结课作业', '作者 / ^700 陈紫晟', '学号 / ^700 201408223005 ^500', '按住图片向左拖动翻页']
+          typeSpeed: 0.5
+          cursorChar: "_"
+        window.swiper = $('.pages').swiper
+          mode: 'horizontal'
+          loop: false
+          keyboardControl: true
+          mousewheelControl: true
+          moveStartThreshold: 0
+          onSlideChangeStart: (swiper) ->
+            #alert swiper.activeIndex
+            switch swiper.activeIndex
+              when 1
+                $('#typedContainer').typed 'reset'
+                $('#typedContainer').typed
+                  strings: ['广院的食堂总是人流不息 ^500', '每天被学生们倒掉了剩菜就可以装满数桶']
+                  typeSpeed: 2
+                  cursorChar: "_" 
+                return
+              when 2
+                $('#typedContainer').typed 'reset'
+                $('#typedContainer').typed
+                  strings: ['^500 在人流高峰时，大约每隔7分钟', '食堂的工作人员们就需要重新更换剩菜桶', '究竟是什么引发了众多的浪费？']
+                  typeSpeed: 2
+                  cursorChar: "_" 
+                return
+              when 3
+                $('#typedContainer').typed 'reset'
+                $('#typedContainer').typed
+                  strings: ['^500 心理学研究表明， ^300 吃饭时注意力分散会导致食欲不振。', '图中一对情侣吃饭时说说笑笑', '最终导致半碗面条被倒掉']
+                  typeSpeed: 2
+                  cursorChar: "_" 
+                return
+              when 4
+                $('#typedContainer').typed 'reset'
+                $('#typedContainer').typed
+                  strings: ['^500 而在吃饭时查看手机', '在食堂也屡见不鲜 ^400', '平均每三个人中就有一人用餐时不间断使用手机。']
+                  typeSpeed: 2
+                  cursorChar: "_" 
+                return
+              when 5
+                $('#typedContainer').typed 'reset'
+                $('#typedContainer').typed
+                  strings: ['^500 甚至于好友一同用餐时，', '也有不少人将注意力放于电子屏幕上 ^500', '最终导致餐盘中的菜被遗忘 ']
+                  typeSpeed: 2
+                  cursorChar: "_" 
+                return
+              when 6
+                $('#typedContainer').typed 'reset'
+                $('#typedContainer').typed
+                  strings: ['^500 图中这名男子', '手持手机查看数分钟 ^500', '手中的白薯已经凉透，最终只得扔掉']
+                  typeSpeed: 2
+                  cursorChar: "_" 
+                return
+              when 7
+                $('#typedContainer').typed 'reset'
+                $('#typedContainer').typed
+                  strings: ['^500 食堂 ^500', '是食的堂。^600', '是食的堂？']
+                  typeSpeed: 2
+                  cursorChar: "_" 
+                return

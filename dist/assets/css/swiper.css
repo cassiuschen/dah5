@@ -96,12 +96,13 @@ sizes, pagination, etc.
 }
 .swiper-slide {
 	/* Specify Slides's Size: */
-	
+	opacity: 0;
 	/*width: 100%;
 	height: 100%;*/
 }
 .swiper-slide-active {
 	/* Specific active slide styling: */
+	opacity: 1 !important;
 	
 }
 .swiper-slide-visible {
